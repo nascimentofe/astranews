@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="post"
+            type="com.fenascimento.astranews.data.Post" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/item_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/item_image_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    postImage="@{post}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:src="@tools:sample/backgrounds/scenic" />
+
+                <TextView
+                    android:id="@+id/item_title_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_image_iv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="@sample/articles.json/data/title"
+                    postTitle="@{post}"
+                    style="@style/ItemTitle"
+                    />
+
+                <TextView
+                    android:id="@+id/item_summary_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_title_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    postSummary="@{post}"
+                    tools:text="@sample/articles.json/data/summary"
+                    style="@style/ItemBodyText" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/item_published_ch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/item_summary_tv"
+                    app:layout_constraintTop_toBottomOf="@id/item_summary_tv"
+                    app:chipBackgroundColor="@android:color/holo_blue_dark"
+                    postPublishedDate="@{post}"
+                    tools:text="@sample/articles.json/data/publishedAt"
+                    style="@style/ChipText" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/item_launch_ch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/item_summary_tv"
+                    app:layout_constraintStart_toEndOf="@id/item_published_ch"
+                    app:layout_constraintEnd_toStartOf="@id/item_favorite_ibtn"
+                    app:chipBackgroundColor="@android:color/holo_blue_dark"
+                    app:chipIcon="@drawable/ic_rocket"
+                    app:chipIconTint="@color/off_white"
+                    tools:text="1 launch event(s)"
+                    itemHasLaunch="@{post}"
+                    style="@style/ChipText" />
+
+                <ImageButton
+                    android:id="@+id/item_favorite_ibtn"
+                    android:layout_width="@dimen/image_btn_size"
+                    android:layout_height="@dimen/image_btn_size"
+                    android:src="@drawable/ic_favorite_24"
+                    android:background="?attr/actionBarItemBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:tint="@color/design_default_color_on_primary"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
