@@ -1,7 +1,10 @@
 # AstraNews
 See the more latest news in AstraNews.
 
-Android Application built on Kotlin as language, Koin to Dependency Injection, TDD metodology and Clean Archtecture concepts.
+Android Application built on:
+[Kotlin](https://kotlinlang.org/) as language, 
+[Koin](https://insert-koin.io/) to Dependency Injection, 
+[TDD](https://www.devmedia.com.br/test-driven-development-tdd-simples-e-pratico/18533) metodology and Clean Archtecture concepts.
 
 
 
