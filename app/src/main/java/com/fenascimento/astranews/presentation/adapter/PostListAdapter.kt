@@ -24,7 +24,7 @@ class PostListAdapter : ListAdapter<Post, PostListAdapter.PostViewHolder>(PostDi
      * manter duas boas práticas: (1) inflar o layout a partir da própria classe
      * ViewHolder e (2) delegar o binding dos dados para a própria classe ViewHolder.
      */
-    class PostViewHolder(val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root) {
+    class PostViewHolder(private val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root) {
 
         companion object {
 
