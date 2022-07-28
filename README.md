@@ -2,9 +2,9 @@
 See the more latest news in AstraNews.
 
 ## Android Application built on:
-1. [Kotlin](https://kotlinlang.org/) as language, 
-2. [Koin](https://insert-koin.io/) to Dependency Injection, 
-3. [TDD](https://www.devmedia.com.br/test-driven-development-tdd-simples-e-pratico/18533) metodology and 
+1. [Kotlin](https://kotlinlang.org/) as language
+2. [Koin](https://insert-koin.io/) to Dependency Injection
+3. [TDD](https://www.devmedia.com.br/test-driven-development-tdd-simples-e-pratico/18533) metodology 
 4. [Clean Archtecture](https://medium.com/luizalabs/descomplicando-a-clean-architecture-cf4dfc4a1ac6) concepts.
 
 
